@@ -4,4 +4,3 @@ gem 'smashing'
 
 gem 'influxdb-client', '~> 1.1'
 gem 'dotenv'
-gem 'mini_racer'
