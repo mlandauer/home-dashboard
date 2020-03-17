@@ -1,0 +1,9 @@
+home-dashboard:
+  image: mlandauer/home-dashboard:$GITHUB_SHA
+  ports:
+    - "3030:80"
+  environment:
+    INFLUXDB_URL: $INFLUXDB_URL
+    INFLUXDB_TOKEN: $INFLUXDB_TOKEN
+    INFLUXDB_BUCKET: $INFLUXDB_BUCKET
+    INFLUXDB_ORG: $INFLUXDB_ORG
