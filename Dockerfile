@@ -14,6 +14,6 @@ RUN bundle install
 
 COPY . .
 
-CMD ["dotenv", "smashing", "start"]
+CMD ["smashing", "start"]
 
 EXPOSE 3030
