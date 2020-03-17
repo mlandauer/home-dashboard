@@ -9,6 +9,7 @@ COPY Gemfile Gemfile.lock ./
 
 RUN apt-get update
 RUN apt-get install -y libv8-dev
+RUN gem install libv8 -v '7.3.492.27.1' -- --with-system-v8
 RUN bundle install
 
 COPY . .
