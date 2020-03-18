@@ -18,4 +18,6 @@ SCHEDULER.every '5s' do
   send_event('stateofcharge', { value: value(tables, "soc") })
   send_event('load', { current: value(tables, "load").round(1) })
   send_event('charge', { current: value(tables, "charge").round(1) })
+  send_event('in', { current: value(tables, "in").round(1) })
+  send_event('out', { current: value(tables, "out").round(1) })
 end
