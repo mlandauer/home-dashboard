@@ -99,7 +99,7 @@ h1 {
 }
 h2 {
   text-transform: uppercase;
-  font-size: 76px;
+  font-size: 65px;
   font-weight: 700;
   color: $text-color;
 }
@@ -255,4 +255,3 @@ h3 {
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
-
