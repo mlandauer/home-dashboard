@@ -32,15 +32,3 @@ jobs:
             -t mlandauer/home-dashboard:$GITHUB_SHA \
             --push \
             .
-      - name: Deploy
-        run: |
-          wget https://downloads.deviceplane.com/cli/latest/linux/amd64/deviceplane
-          chmod +x deviceplane
-          ./deviceplane deploy home-dashboard deviceplane.yml
-        env:
-          DEVICEPLANE_ACCESS_KEY: ${{ secrets.DEVICEPLANE_ACCESS_KEY }}
-          DEVICEPLANE_PROJECT: ${{ secrets.DEVICEPLANE_PROJECT }}
-          INFLUXDB_URL: ${{ secrets.INFLUXDB_URL }}
-          INFLUXDB_TOKEN: ${{ secrets.INFLUXDB_TOKEN }}
-          INFLUXDB_BUCKET: ${{ secrets.INFLUXDB_BUCKET }}
-          INFLUXDB_ORG: ${{ secrets.INFLUXDB_ORG }}
