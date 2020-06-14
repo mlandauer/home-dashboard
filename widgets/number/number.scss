@@ -1,11 +1,14 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #47bbb3;
-$value-color:       #fff;
+$black-color: #000;
+$white-color: #fff;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$background-color:  $white-color;
+$value-color:       $black-color;
+
+$title-color:       $black-color;
+$moreinfo-color:    $black-color;
 
 // ----------------------------------------------------------------------------
 // Widget-number styles
@@ -33,7 +36,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: $black-color;
   }
 
 }
