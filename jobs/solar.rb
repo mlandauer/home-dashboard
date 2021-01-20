@@ -1,4 +1,4 @@
-require 'influxdb2/client'
+require 'influxdb-client'
 
 client = InfluxDB2::Client.new(
   ENV["INFLUXDB_URL"],
