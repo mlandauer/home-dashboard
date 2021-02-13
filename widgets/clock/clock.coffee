@@ -11,6 +11,8 @@ class Dashing.Clock extends Dashing.Widget
     s = today.getSeconds()
     m = @formatTime(m)
     s = @formatTime(s)
+    # Don't want to use a 24 hour clock
+    h = if h < 13 then h else h - 12
     @set('time', h + ":" + m)
     @set('date', today.toDateString())
 

@@ -8,6 +8,8 @@ $background-color:  #dc5945;
 // ----------------------------------------------------------------------------
 .widget-clock {
 
-  background-color: #aaa;
-
+  background-color: #fff;
+  h1, h2 {
+    color: #000;
+  }
 }
