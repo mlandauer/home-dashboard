@@ -26,6 +26,7 @@ SCHEDULER.every '5s' do
   send_event('stateofcharge', { value: value(tables, "soc") })
   send_event('load', { current: a_to_w(value(tables, "load")).round(0) })
   send_event('charge', { current: a_to_w(value(tables, "charge")).round(0) })
+  send_event('chargeminusload', { current: a_to_w(value(tables, "charge") - value(tables, "load")).round(0) })
   send_event('in', { current: ah_to_wh(value(tables, "in")).round(0) })
   send_event('out', { current: ah_to_wh(value(tables, "out")).round(0) })
 end
