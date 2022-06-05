@@ -23,19 +23,10 @@ SCHEDULER.every '5s' do
   query = "from(bucket: \"#{bucket}\") |> range(start: -2h) |> filter(fn: (r) => r._measurement == \"solar\") |> last()"
   tables = client.create_query_api.query(query: query, org: org)
 
-  soc = value(tables, "soc")
-  send_event('stateofcharge', { value: soc })
+  send_event('stateofcharge', { value: value(tables, "soc") })
   send_event('load', { current: a_to_w(value(tables, "load")).round(0) })
   send_event('charge', { current: a_to_w(value(tables, "charge")).round(0) })
   send_event('chargeminusload', { current: a_to_w(value(tables, "charge") - value(tables, "load")).round(0) })
   send_event('in', { current: ah_to_wh(value(tables, "in")).round(0) })
   send_event('out', { current: ah_to_wh(value(tables, "out")).round(0) })
-
-  # Data from around 24 hours ago
-  query = "from(bucket: \"#{bucket}\") |> range(start: -24h) |> filter(fn: (r) => r._measurement == \"solar\")"
-  tables = client.create_query_api.query(query: query, org: org)
-
-  soc_day = value(tables, "soc")
-
-  send_event('stateofchargedaychange', { current: soc - soc_day })
 end
