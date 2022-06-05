@@ -32,7 +32,7 @@ SCHEDULER.every '5s' do
   send_event('out', { current: ah_to_wh(value(tables, "out")).round(0) })
 
   # Data from around 24 hours ago
-  query = "from(bucket: \"#{bucket}\") |> range(start: -24h) |> filter(fn: (r) => r._measurement == \"solar\")"
+  query = "from(bucket: \"#{bucket}\") |> range(start: -24h) |> filter(fn: (r) => r._measurement == \"solar\") |> first()"
   tables = client.create_query_api.query(query: query, org: org)
 
   soc_day = value(tables, "soc")
